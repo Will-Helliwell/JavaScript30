@@ -59,9 +59,14 @@
 
 <script>
   window.addEventListener('keydown', function(event) {
-    console.log(event);
-    sound = document.getElementById("testId");
-    sound.play();
+
+    // get number value of key that has been pressed
+    keyCode = event.keyCode;
+
+    // play audio with that data-key
+    selectedKeys = document.querySelectorAll(`[data-key='${keyCode}']`);
+    console.log(selectedKeys);
+    selectedKeys[1].play();
   });
 </script>
 
